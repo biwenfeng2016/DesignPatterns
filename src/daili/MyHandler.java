@@ -56,7 +56,7 @@ public class MyHandler implements InvocationHandler {
 				log.info(logBuilder.toString());
 				
 			}
-			throw exception;
+			return result;
 		} catch (Exception e) {
 			throw e;
 

@@ -13,7 +13,8 @@ public class DoTest {
 		Animal dogProxy = (Animal) Proxy.newProxyInstance(dog.getClass().getClassLoader(),
 				dog.getClass().getInterfaces(), new MyHandler(dog));
 		try {
-			dogProxy.eat("水果",DogException.class);	
+			String resultString = dogProxy.eat("水果",DogException.class);
+			System.out.println(resultString);
 		} catch (RuntimeException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
