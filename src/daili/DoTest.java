@@ -10,6 +10,7 @@ public class DoTest {
 	public void test(){
 
 		Dog dog = new Dog();
+		Dog dog1 = new Dog();
 		Animal dogProxy = (Animal) Proxy.newProxyInstance(dog.getClass().getClassLoader(),
 				dog.getClass().getInterfaces(), new MyHandler(dog));
 		try {
