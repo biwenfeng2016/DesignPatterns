@@ -5,9 +5,10 @@ import org.junit.Test;
 public class testException {
 
     @Test
-    public void test() {
+    public void test() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         String name = null;
         ErrorCodeEnum errorCode = ErrorCodeEnum.getByValue("SYS_ERROR");
+        String obj = (String)Class.forName("java.lang.String").newInstance();
         int i = 0;
         try {
             if (name == null) {
