@@ -10,10 +10,10 @@ public class CloneTest {
     @Test
     public  void CloneTest() throws IOException, CloneNotSupportedException {
         File file = new File("C:\\rrr.txt");
-        Dog dog = new Dog();
-        Cat cat = new Cat("小猫");
+        DeepCloneDog dog = new DeepCloneDog();
+        SimpleCloneCat cat = new SimpleCloneCat("小猫");
         dog.setFriend(cat);
-        Dog cloneDog = (Dog) dog.clone();
+        DeepCloneDog cloneDog = (DeepCloneDog) dog.clone();
         System.out.println(dog==cloneDog);
         dog.setName("泰迪");
         System.out.println(dog.getName());

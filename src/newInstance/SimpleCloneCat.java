@@ -1,10 +1,10 @@
 package newInstance;
 
-public class Cat implements  Cloneable{
+public class SimpleCloneCat implements  Cloneable{
 
     private String name;
 
-    public  Cat (String name){
+    public SimpleCloneCat(String name){
 
         this.name = name ;
     }

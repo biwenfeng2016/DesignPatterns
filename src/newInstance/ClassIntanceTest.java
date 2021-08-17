@@ -7,7 +7,7 @@ public class ClassIntanceTest {
     @Test
     public void testClassNewInstance() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
 
-        Dog dog = (Dog) Class.forName("newInstance.Dog").newInstance();
+        DeepCloneDog dog = (DeepCloneDog) Class.forName("newInstance.DeepCloneDog").newInstance();
         dog.spellName();
 
 

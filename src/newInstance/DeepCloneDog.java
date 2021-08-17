@@ -1,26 +1,26 @@
 package newInstance;
 
-public class Dog implements Cloneable {
+public class DeepCloneDog implements Cloneable {
 
 
     private String name;
 
-    private Cat friend;
+    private SimpleCloneCat friend;
 
-    public Dog() {
+    public DeepCloneDog() {
 
     }
 
     // this is deep clone, clone Dog and the reference data Cat
     @Override // Because the clone method in Object is Protect, so need override that can be use in this class.
     protected Object clone() throws CloneNotSupportedException {
-        Cat cloneCat = (Cat) this.friend.clone();
-        Dog clone = (Dog) super.clone();
+        SimpleCloneCat cloneCat = (SimpleCloneCat) this.friend.clone();
+        DeepCloneDog clone = (DeepCloneDog) super.clone();
         clone.setFriend(cloneCat);
         return clone;
     }
 
-    public Dog(String dogName) {
+    public DeepCloneDog(String dogName) {
         this.name = dogName;
 
     }
@@ -38,11 +38,11 @@ public class Dog implements Cloneable {
         this.name = name;
     }
 
-    public Cat getFriend() {
+    public SimpleCloneCat getFriend() {
         return friend;
     }
 
-    public void setFriend(Cat friend) {
+    public void setFriend(SimpleCloneCat friend) {
         this.friend = friend;
     }
 }
