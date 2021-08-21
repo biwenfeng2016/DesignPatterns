@@ -5,7 +5,7 @@ import com.sun.org.apache.bcel.internal.generic.DUP;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.TimeUnit;
 
-public class MyWeekReference {
+public class MyWeakReference {
 
     public static void main(String[] args) throws InterruptedException {
 
