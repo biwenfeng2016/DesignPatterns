@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 public class MyWeakReference {
 
     public static void main(String[] args) throws InterruptedException {
-
         Duck duck = new Duck();
         Dog dog = new Dog(duck);
         dog.setFriendsForDuck();
@@ -19,10 +18,6 @@ public class MyWeakReference {
         TimeUnit.SECONDS.sleep(1);
         System.out.println("dog.getDuckFriend().getWeakChickenFriendName() = " + dog.getDuckFriend().getWeakChickenFriendName());
         System.out.println("dog.getDuckFriend().getStrongChickenFriendName() = " + dog.getDuckFriend().getStrongChickenFriendName());
-
-
-
-
     }
 
 }
@@ -32,21 +27,16 @@ class Dog {
     Chicken kobe = new Chicken("kobe");
     Chicken bryant = new Chicken("bryant");
     WeakReference<Chicken>  weakChicken = new WeakReference<Chicken>(kobe);
-
     public Duck getDuckFriend() {
         return duckFriend;
     }
-
     Duck duckFriend;
     public Dog(Duck duckFriend){
        this.duckFriend=duckFriend;
-
     }
 
 
-
     public void eatChicken(){
-
         kobe=null;
         bryant=null;
     }
@@ -54,10 +44,7 @@ class Dog {
     public void setFriendsForDuck(){
         duckFriend.setWeakChickenFriend(weakChicken);
         duckFriend.setStrongChickenFriend(bryant);
-
     }
-
-
 }
 
 class Chicken {
@@ -91,7 +78,6 @@ class Duck {
     public void setStrongChickenFriend(Chicken strongChickenFriend) {
         this.strongChickenFriend = strongChickenFriend;
     }
-
 
 
     public String getWeakChickenFriendName(){
